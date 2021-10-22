@@ -6,7 +6,7 @@ A very basic app to allow people to see the current weather in a searched city a
 
 ## Image
 
-
+<img src='assets/images/Screen Shot 2021-10-21 at 10.04.18 PM.png'>
 
 ## Installation
 - Follow deployment link listed below
