@@ -1,6 +1,6 @@
 var searchButton =$(".searchButton");
 
-var apiKey= "b3f03bc91b3503ca26b7aeea2999133d"
+const apiKey= "b3f03bc91b3503ca26b7aeea2999133d"
 
 for (var i = 0; i < localStorage.length; i++) {
     var city = localStorage.getItem(i);
@@ -28,6 +28,14 @@ searchButton.click(function () {
         }).then(function (response) {
             var cityName = $(".list-group").addClass("list-group-item");
             cityName.append("<li>" + response.name + "</li>");
+            var local = localStorage.setItem(keyCount, response.name);
+            keyCount = keyCount + 1;
+
+            var currentCard = $(".currentCard").append("<div>").addClass("card-body");
+            currentCard.empty();
+            var currentName = currentCard.append("<p>");
+            currentCard.append(currentName);
+
         })
 
     }
