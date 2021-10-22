@@ -35,10 +35,20 @@ searchButton.click(function () {
             currentCard.empty();
             var currentName = currentCard.append("<p>");
             currentCard.append(currentName);
-
+            
+            // Adds date to searched city
             var timeUTC = new Date(response.dt * 1000);
             currentName.append(response.name + " " + timeUTC.toLocaleDateString("en-US"));
             currentName.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
+
+            // get temperature of city
+            var currentTemp = currentName.append("<p>");
+            currentName.append(currentTemp);
+            currentTemp.append("<p>" + "Temperature: " + response.main.temp + "</p>");
+            // shows humidity
+            currentTemp.append("<p>" + "Humidity: " + response.main.humidity + "%" + "</p>");
+            // shows wind speed
+            currentTemp.append("<p>" + "Wind Speed: " + response.wind.speed + "</p>");
 
         })
 
